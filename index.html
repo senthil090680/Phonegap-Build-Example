@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PhoneGap Device Info</title>
+
+<script type="text/javascript" src="phonegap-1.2.0.js"></script>
+<script type="text/javascript">
+function onDeviceReady() {
+	/*document.getElementById('devname').innerHTML = "sdk";
+	document.getElementById('phonegapver').innerHTML = "1.2.0";
+	document.getElementById('devplat').innerHTML = "android";
+	document.getElementById('devver').innerHTML = "2.2";
+	document.getElementById('devuuid').innerHTML = "wedee";*/
+	
+	document.getElementById('devname').innerHTML = device.name;
+	document.getElementById('phonegapver').innerHTML = device.phonegap;
+	document.getElementById('devplat').innerHTML = device.platform;
+	document.getElementById('devver').innerHTML = device.version;
+	document.getElementById('devuuid').innerHTML = device.uuid;
+}
+function init() {
+	document.addEventListener('deviceready',onDeviceReady,false);
+}
+</script>
+</head>
+<body onLoad="init();">
+<h1>DEVICE INFO</h1>
+<table border="1">
+	<tr>
+		<td>DEVICE NAME</td>
+		<td><span id="devname"></span></td>
+	</tr>
+	<tr>
+		<td>PHONEGAP VERSION</td>
+		<td><span id="phonegapver"></span></td>
+	</tr>
+	<tr>
+		<td>DEVICE PLATFORM</td>
+		<td><span id="devplat"> </span></td>
+	</tr>
+	<tr>
+		<td>DEVICE PLATFORM VERSION</td>
+		<td><span id="devver"></span></td>
+	</tr>
+	<tr>
+		<td>DEVICE UUID</td>
+		<td><span id="devuuid"></span></td>
+	</tr>
+</table>
+</body>
+</html>
